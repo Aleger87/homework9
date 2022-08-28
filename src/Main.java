@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     /*
     1. Необходимо создать класс Book, который содержит в себе данные об имени, авторе и годе публикации.
@@ -28,5 +30,43 @@ public class Main {
         System.out.println(author.getFirstName() +" " +author.getFirstName());
         System.out.println(author1.getFirstName() +" " +author1.getFirstName());
 
+        /*
+        1. Необходимо в классе с методом main создать массив объектов типа Book и положить туда созданные книги.
+        2. Написать статические методы для работы с массивом в классе, где располагается метод main:
+            1. Добавить книгу (найти свободную ячейку массива и положить туда книгу).
+                Учесть, что этот метод может быть вызван любое количество раз (от 1 до 5) и каждая новая книга должна успешно укладываться в массив.
+            2. Напечатать в консоль все книги из массива в следующем формате:
+         “Stephen King: The Stand: 1978
+        * */
+        System.out.println("Задание 2");
+        Book[] books = new Book[3];
+        books[0] = book;
+        books[1] = book1;
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] != null) {
+            } else {
+                addBook (books, i);
+            }
+        }
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(books[i].getName() + ": " +books[i].getAuthor() + ": " + books[i].getYear());
+        }
     }
+
+    public static Object addBook (Book[] books, int i){
+        Scanner newBook = new Scanner(System.in) ;
+        System.out.println("Введите название книги:");
+        String title = newBook.nextLine();
+        System.out.println("Укажите автора:");
+        String author = newBook.nextLine();
+        System.out.println("Укажите год публикации:");
+
+        int year = newBook.nextInt();
+
+        Book book = new Book(title, author, year);
+        books[i] = book;
+        return books;
+    }
+
+
 }
