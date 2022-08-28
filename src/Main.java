@@ -15,6 +15,18 @@ public class Main {
     * */
 
     public static void main(String[] args) {
+        Book book = new Book("Война и Мир", "Толстой Лев Николаевич", 1863);
+        Book book1 = new Book("Мастер и Маргарита", "Михаила Афанасьевича Булгакова", 1928);
+        System.out.println(book.getName()+" " + book.getAuthor()+ " " +book.getYear());
+        System.out.println(book1.getName()+" " + book1.getAuthor()+ " " +book1.getYear());
+        book1.setYear(1929);
+        System.out.println(book1.getName()+" " + book1.getAuthor()+ " " +book1.getYear());
+
+
+        Author author = new Author("Лев", "Толстой");
+        Author author1 = new Author("Михаил", "Булгаков");
+        System.out.println(author.getFirstName() +" " +author.getFirstName());
+        System.out.println(author1.getFirstName() +" " +author1.getFirstName());
 
     }
 }
