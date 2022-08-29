@@ -29,7 +29,7 @@ public class Library {
 
     public void setNewData(String name, int year) {
         for (int i = 0; i < bookss.length; i++) {
-            if (bookss[i].getName().equals(name)) {
+            if (bookss[i].getName().equalsIgnoreCase(name)) {
                 bookss[i].setYear(year);
             }
         }
