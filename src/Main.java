@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -17,8 +18,8 @@ public class Main {
     * */
 
     public static void main(String[] args) {
-        Book book = new Book("Война и Мир", "Толстой Лев Николаевич", 1863);
-        Book book1 = new Book("Мастер и Маргарита", "Михаила Афанасьевича Булгакова", 1928);
+        Book book = new Book("Война и Мир", "Толстой Лев Николаевич ", 1863);
+        Book book1 = new Book("Мастер и Маргарита", "Булгакова Михаил Афанасьевич ", 1928);
         System.out.println(book.getName()+" " + book.getAuthor()+ " " +book.getYear());
         System.out.println(book1.getName()+" " + book1.getAuthor()+ " " +book1.getYear());
         book1.setYear(1929);
@@ -27,8 +28,8 @@ public class Main {
 
         Author author = new Author("Лев", "Толстой");
         Author author1 = new Author("Михаил", "Булгаков");
-        System.out.println(author.getFirstName() +" " +author.getFirstName());
-        System.out.println(author1.getFirstName() +" " +author1.getFirstName());
+        System.out.println(author.getFirstName() +" " +author.getLastName());
+        System.out.println(author1.getFirstName() +" " +author1.getLastName());
 
         /*
         1. Необходимо в классе с методом main создать массив объектов типа Book и положить туда созданные книги.
@@ -45,28 +46,28 @@ public class Main {
         for (int i = 0; i < books.length; i++) {
             if (books[i] != null) {
             } else {
-                addBook (books, i);
+               Library.addBook (books, i);
             }
         }
         for (int i = 0; i < books.length; i++) {
             System.out.println(books[i].getName() + ": " +books[i].getAuthor() + ": " + books[i].getYear());
         }
+
+
+        System.out.println("Задание 3");
+        Scanner text = new Scanner(System.in) ;
+
+        System.out.println("Текущее количество книг в массиве " + books.length);
+        System.out.println("Укажите сколько книг желаете добавить");
+        int countBook = text.nextInt();
+        Library lib = new Library(books.length + countBook);
+        lib.setBooks(books);
+        lib.getBooks();
+        lib.setNewData("Война и Мир", 2025);
+        lib.getBooks();
+
     }
 
-    public static Object addBook (Book[] books, int i){
-        Scanner newBook = new Scanner(System.in) ;
-        System.out.println("Введите название книги:");
-        String title = newBook.nextLine();
-        System.out.println("Укажите автора:");
-        String author = newBook.nextLine();
-        System.out.println("Укажите год публикации:");
-
-        int year = newBook.nextInt();
-
-        Book book = new Book(title, author, year);
-        books[i] = book;
-        return books;
-    }
 
 
 }
