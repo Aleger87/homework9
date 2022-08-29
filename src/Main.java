@@ -63,7 +63,7 @@ public class Main {
         Library lib = new Library(books.length + countBook);
         lib.setBooks(books);
         lib.getBooks();
-        lib.setNewData("Война и Мир", 2025);
+        lib.setNewData("война и мир", 2025);
         lib.getBooks();
 
     }
