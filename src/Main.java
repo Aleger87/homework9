@@ -31,7 +31,7 @@ public class Main {
         System.out.println(author.getFirstName() +" " +author.getLastName());
         System.out.println(author1.getFirstName() +" " +author1.getLastName());
 
-        // исправление
+        // исправление ДЗ9
         System.out.println(author.toString());
         System.out.println(author1.toString());
 
