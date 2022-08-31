@@ -31,6 +31,10 @@ public class Main {
         System.out.println(author.getFirstName() +" " +author.getLastName());
         System.out.println(author1.getFirstName() +" " +author1.getLastName());
 
+        // исправление
+        System.out.println(author.toString());
+        System.out.println(author1.toString());
+
         /*
         1. Необходимо в классе с методом main создать массив объектов типа Book и положить туда созданные книги.
         2. Написать статические методы для работы с массивом в классе, где располагается метод main:
