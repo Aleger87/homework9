@@ -18,6 +18,7 @@ public class Main {
     * */
 
     public static void main(String[] args) {
+        System.out.println("ДЗ9");
         Book book = new Book("Война и Мир", "Толстой Лев Николаевич ", 1863);
         Book book1 = new Book("Мастер и Маргарита", "Булгакова Михаил Афанасьевич ", 1928);
         System.out.println(book.getName()+" " + book.getAuthor()+ " " +book.getYear());
@@ -30,6 +31,10 @@ public class Main {
         Author author1 = new Author("Михаил", "Булгаков");
         System.out.println(author.getFirstName() +" " +author.getLastName());
         System.out.println(author1.getFirstName() +" " +author1.getLastName());
+
+        // исправление ДЗ9
+        System.out.println(author.toString());
+        System.out.println(author1.toString());
 
         /*
         1. Необходимо в классе с методом main создать массив объектов типа Book и положить туда созданные книги.
@@ -65,6 +70,32 @@ public class Main {
         lib.getBooks();
         lib.setNewData("война и мир", 2025);
         lib.getBooks();
+
+        System.out.println("ДЗ10");
+        System.out.println("Уровень лайт");
+        System.out.println(book.toString());
+        System.out.println(book1.toString());
+
+        Book book2 = new Book("война и мир", "Толстой Лев Николаевич ", 2025);
+        System.out.println(book2.toString());
+        if (book.equals(book2)){
+            System.out.println("Книги одинаковые");
+        }else {
+            System.out.println("Книги разные");
+        }
+
+        System.out.println(book2.hashCode());
+        System.out.println(book.hashCode());
+        if (book2.hashCode() == book.hashCode()){
+            System.out.println("Одинаковый hashCode");
+        }
+
+        System.out.println(author.toString());
+        System.out.println(author1.toString());
+        Author author3 = new Author("Лев", "Толстой");
+        System.out.println(author3.toString());
+        System.out.println(author.equals(author3));
+
 
     }
 
