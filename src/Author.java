@@ -27,7 +27,7 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return firstName.equals(author.firstName) && lastName.equals(author.lastName);
+        return firstName.equalsIgnoreCase(author.firstName) && lastName.equalsIgnoreCase(author.lastName);
     }
 
     @Override
